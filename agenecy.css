@@ -1,0 +1,200 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+:root {
+  --dark-color: rgb(13, 10, 46);
+  --white: white;
+  --green-color: rgb(30, 194, 123);
+  --yellow: rgb(255, 221, 0);
+  --section-color: rgba(203, 215, 223, 0.492);
+}
+.main-title::after {
+  content: "";
+  margin-top: 10px;
+  position: absolute;
+  width: 120px;
+  height: 4px;
+  background-color: var(--green-color);
+  bottom: -20px;
+  left: 50%;
+  transform: translatex(-50%);
+}
+/* navbar start */
+.navbar {
+  background: var(--dark-color);
+}
+.navbar .navbar-nav .nav-link {
+  color: var(--white);
+  transition: 250ms ease;
+}
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus {
+  color: var(--green-color);
+}
+.navbar .navbar-toggler {
+  color: var(--white);
+  border: solid 2px var(--white);
+  font-size: 1.7rem;
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+  /* عشان يلغي الشادو الي بصير لما اعمل فوكوس على ايكون البار */
+}
+.navbar .navbar-toggler[aria-expanded="true"] {
+  /* هاد الي حطيته هو اتريبويت داخل زر الايكون البار لما البار تفتح المنيو بتكون ترو ولما البار تكون مش فوكس ومش ضاغط عليها يعني شاشة كبيرة فتكون فولس
+    انا هون قلتله لما تكون ترو يعني انعمل اكسباند للمنيو خلي البوردر اخضر
+    */
+  border: solid 2px var(--green-color);
+}
+/* navbar end */
+
+/* landing start */
+.landing {
+  background-color: var(--dark-color);
+  background-image: url(images/stars1.webp);
+  min-height: calc(100vh - 75px);
+  /* ال75 بكسل هذول طول الهيدر */
+}
+#LandingTitle {
+  letter-spacing: 5px;
+  transition: 1s ease;
+}
+/* landing end */
+
+/* feautures start */
+.sectionIcon {
+  color: var(--yellow);
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+.icon-holder {
+  height: 200px;
+}
+.icon-holder svg {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.icon-holder .number {
+  height: 12rem;
+  color: var(--section-color);
+}
+.icon-holder .icon {
+  font-size: 5rem;
+  color: var(--green-color);
+}
+.feuatures .feat h3 {
+  color: var(--yellow);
+}
+/* feautures end */
+/* our work start */
+.our-work {
+  background: var(--section-color);
+}
+.our-work ul .active {
+  background-color: #0d6efd;
+  color: white;
+}
+.our-work ul li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.our-work ul li:not(.active):hover {
+  /* يعني اي وحدة مالهاش كلاس اكتيف 
+     */
+  color: #0d6efd;
+}
+.our-work .box {
+  background: white;
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.our-work .box::before {
+  content: attr(data-work);
+  /*  بجيب قيمة الاتريبيوت الي اسمو هيك طبعا الاتريبيوت تاع البوكس وبحطها بالكونتينت*/
+  position: absolute;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background-color: rgba(30, 194, 123, 0.627);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: 0.3s;
+  transform: translatey(calc(-100% - 5px));
+}
+.our-work .box:hover::before {
+  transform: translatey(0);
+}
+/* our work end */
+/* stuff start */
+.stuff .description {
+  max-width: 500px;
+}
+
+/* stuff start */
+/* team start */
+.team {
+  background: var(--section-color);
+}
+.team .box h4 {
+  background: var(--green-color);
+}
+.team h2 {
+  color: var(--yellow);
+}
+/* team end */
+/* project start */
+.project {
+  background: var(--dark-color);
+}
+.project h1 {
+  color: var(--green-color);
+}
+/* project end */
+/* subscrib start */
+.subscribe {
+  background: var(--yellow);
+}
+.subscribe input[type="text"] {
+  border: none;
+  border-bottom: solid 2px white;
+}
+.subscribe input[type="text"]::placeholder {
+  color: white;
+}
+.subscribe input[type="text"]:focus {
+  outline: none;
+}
+.subscribe input[type="submit"] {
+  border: none;
+  background: var(--dark-color);
+  color: var(--yellow);
+}
+/* subscrib end */
+/* footer start */
+footer {
+  background: var(--dark-color);
+}
+footer .copyrights >span{
+    color: var(--green-color);
+}
+footer .copyrights div span{
+    color: var(--yellow);
+}
+footer .social img{
+width:45px;
+height: 45px;
+}
+
+/* footer end */
